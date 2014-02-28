@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Action.create(request_type: 'GET', description: "Play a random sound of clover", action:"search.php")
-Action.create(request_type: 'script', description: "", action:"blah.php")
+Task.create(name: "deploy cloversites", description: "Deploy cloversite.com to production.  Don't use this lightly.", request_type: 'script', action:"tmp/tmp/deploy.sh")
+Task.create(name: "random sound", description: "Play a random sound from sounds of clover", request_type: 'GET', action:"www.google.com")
