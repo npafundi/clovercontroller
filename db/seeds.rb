@@ -1,10 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Create a few tasks
 
-Task.create(name: "deploy clodo.com master [dev]", description: "Deploy cloversite.com to production.  Don't use this lightly.", request_type: 'script', action:"") #FIXME don't leave the API key here :)
+# This one should work just fine
+Task.create(name: "deploy clodo.com master [dev]", description: "Deploy cloversite.com to production.  Don't use this lightly.", request_type: 'script', action:"http://public.dev.cloverdonations.com/general-webhook.php?apiToken=#{ENV['CLOVER_API_KEY']}&hook=deploy&dest=dev&repos=cloverdonations.com")
+
+# FIXME - Right now, this is just for looks
 Task.create(name: "random sound", description: "Play a random sound from sounds of clover", request_type: 'GET', action:"www.google.com")
