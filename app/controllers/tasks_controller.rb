@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :trigger]
 
   # GET /tasks
   # GET /tasks.json
@@ -59,6 +59,24 @@ class TasksController < ApplicationController
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
+  end
+  
+  # GET /tasks/1/trigger
+  def trigger
+    #TODO make this more versatile
+    Rails.logger.debug "NICK-TRIGGER"
+    Rails.logger.debug @task.inspect
+    
+    require 'net/http'
+    url = URI.parse(@task.action)
+    Rails.logger.debug url.inspect
+    req = Net::HTTP::Get.new(url.to_s)
+    Rails.logger.debug req.inspect
+    res = Net::HTTP.start(url.host, url.port) { |http|
+      http.request(req)
+    }
+    Rails.logger.debug res.body
+    redirect_to :back
   end
 
   private

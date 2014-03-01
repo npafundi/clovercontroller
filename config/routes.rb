@@ -31,6 +31,8 @@ CloverController::Application.routes.draw do
   root 'tasks#index'
   resource :tasks
   
+  get 'tasks/:id/trigger', to: 'tasks#trigger', as: 'trigger_task'
+  
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
