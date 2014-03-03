@@ -5,3 +5,5 @@ Task.create(name: "deploy clodo.com master [dev]", description: "Deploy cloversi
 
 # FIXME - Right now, this is just for looks
 Task.create(name: "random sound", description: "Play a random sound from sounds of clover", request_type: 'GET', action:"http://designs-mac-mini.local/ajax/random.php")
+
+Task.create(name: "change tint gradient", description: "Update tint to a new gradient using Jason's script.", request_type: 'GET', action:"http://tint.cloversites.com/api/create_random_gradient")
