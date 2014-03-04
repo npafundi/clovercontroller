@@ -19,10 +19,8 @@ test:
   pool: 5
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: cc_prod
   password:
-  host: localhost
-  socket: /tmp/mysql.sock
   timeout: 5000
   pool: 5

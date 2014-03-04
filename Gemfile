@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-gem 'rails_12factor'
-gem 'mysql2'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -33,6 +30,15 @@ gem 'dotenv-rails', :groups => [:development, :test]
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  gem 'mysql2'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 ruby '2.0.0'
