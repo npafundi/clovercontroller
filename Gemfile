@@ -32,14 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-  gem 'mysql2'
-end
+gem 'mysql2'
 
-group :production do
-  gem 'rails_12factor'
-  gem 'pg'
-end
+gem 'rails_12factor'
+gem 'pg'
 
 ruby '2.0.0'
 # Use ActiveModel has_secure_password
